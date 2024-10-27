@@ -1,0 +1,42 @@
+<!-- <table border="1">
+    <thead>
+        <th>user id</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of caAuthorizedUsers">
+            <td>{{data}}</td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+<div class="container">
+    <div class="header">
+      <h2>CA Dashboard</h2>
+    </div>
+  
+    <div class="content">
+      <p>Welcome to the CA Dashboard! Here you can manage your clients and access various tax tools.</p>
+      
+      <div class="cards">
+        <div class="card">
+          <h3>Client Management</h3>
+          <p>View and manage your client profiles efficiently.</p>
+          <button mat-raised-button color="primary" routerLink="/clientmanagement">Manage Clients</button>
+        </div>
+  
+        <div class="card">
+          <h3>Tax Calculations</h3>
+          <p>Calculate taxes for your clients based on different regimes.</p>
+          <button mat-raised-button color="primary" routerLink="/taxcalculator">Go to Calculator</button>
+        </div>
+  
+        <div class="card">
+          <h3>Reports</h3>
+          <p>Generate detailed tax reports for your clients.</p>
+          <button mat-raised-button color="primary" routerLink="/reports">View Reports</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

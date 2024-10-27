@@ -1,0 +1,37 @@
+
+<table border="1" *ngIf="restUserData.userDetails">
+    <tr>
+        <th>User id</th>
+        <th>User Name</th>
+        <th>email</th>
+        <th>userAddress</th>
+        <th>gender</th>
+        <th>assessmentYear</th>
+        <th>age</th>
+        <th>totalAnnualIncome</th>
+        <th>totalDeductions</th>
+        <th>oldRegimeTax</th>
+        <th>newRegimeTax</th>
+        
+    
+    </tr>
+    
+    <tr *ngFor="let p of restUserData.userDetails ">
+        <td> {{p.userId}} </td>
+        <td> {{p.userName}} </td>
+        <td> {{p.email}} </td>
+        <td> {{p.userAddress}} </td>
+        <td> {{p.gender}} </td>
+        <td> {{p.assessmentYear}} </td>
+        <td> {{p.age}} </td>
+        <td> {{p.totalAnnualIncome}} </td>
+        <td> {{p.totalDeductions}} </td>
+        <td> {{p.oldRegimeTax}} </td>
+        <td> {{p.newRegimeTax}} </td>
+        <!-- <button  (click)="restUserData.viewDetails(p.userId)">View Details</button> -->
+    
+    </tr>
+    </table>
+
+    <!-- this.router.navigateByUrl("displayuserdetails"); -->
+    <button routerLink="/clientmanagement">Back</button>

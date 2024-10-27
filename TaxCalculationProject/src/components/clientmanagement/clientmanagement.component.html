@@ -1,0 +1,63 @@
+<!-- <p>clientmanagement works!</p> -->
+
+<!-- <table border="1">
+    <thead>
+        <th>user id</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of caAuthorizedUsers">
+            <td>{{data}}</td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+<table border="1">
+    <tr>
+        <th>User id</th>
+        <th>User Name</th>
+        <th>View Details</th>
+        
+
+    </tr>
+    <tr *ngFor="let p of restUserData.allusers ">
+        <td> {{p.userId}} </td>
+        <td> {{p.userName}} </td>
+        <button  (click)="restUserData.viewDetails(p)" routerLink="/displayuserdetails">View Details</button>
+
+    </tr>
+</table> 
+
+<!-- <table border="1" *ngIf="restUserData.userDetails">
+<tr>
+    <th>User id</th>
+    <th>User Name</th>
+    <th>email</th>
+    <th>userAddress</th>
+    <th>gender</th>
+    <th>assessmentYear</th>
+    <th>age</th>
+    <th>totalAnnualIncome</th>
+    <th>totalDeductions</th>
+    <th>oldRegimeTax</th>
+    <th>newRegimeTax</th>
+    
+
+</tr> -->
+
+<!-- <tr *ngFor="let p of restUserData.userDetails ">
+    <td> {{p.userId}} </td>
+    <td> {{p.userName}} </td>
+    <td> {{p.email}} </td>
+    <td> {{p.userAddress}} </td>
+    <td> {{p.gender}} </td>
+    <td> {{p.assessmentYear}} </td>
+    <td> {{p.age}} </td>
+    <td> {{p.totalAnnualIncome}} </td>
+    <td> {{p.totalDeductions}} </td>
+    <td> {{p.oldRegimeTax}} </td>
+    <td> {{p.newRegimeTax}} </td> -->
+    <!-- <button  (click)="restUserData.viewDetails(p.userId)">View Details</button> -->
+
+<!-- </tr>
+</table> -->

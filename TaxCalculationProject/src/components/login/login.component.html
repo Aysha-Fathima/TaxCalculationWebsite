@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="header">
+    <h2>Login</h2>
+    <div class="header-bar"></div>
+  </div>
+  <form #loginForm="ngForm" (ngSubmit)="auth.login(loginForm)">
+  <!-- <form #loginForm="ngForm" (ngSubmit)="login(loginForm)"> -->
+    
+    <div class="user-type">
+      <label>User Type:</label>
+      <mat-button-toggle-group name="usertype" ngModel required>
+        <mat-button-toggle value="user" class="toggle-option">User</mat-button-toggle>
+        <mat-button-toggle value="CA" class="toggle-option">CA</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput required email name="email" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" required name="password" ngModel>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Login</button>
+  </form>
+</div>

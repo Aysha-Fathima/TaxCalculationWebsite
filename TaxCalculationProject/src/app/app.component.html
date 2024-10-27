@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <span class="logo">Income Tax Calculator</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="home">Home</button>
+  <button *ngIf="!auth.isuser && !auth.isCA" mat-button routerLink="register">Register</button>
+  <button *ngIf="!auth.isuser && !auth.isCA" mat-button routerLink="login">Login</button>
+  <button *ngIf="auth.isuser || auth.isCA" mat-button (click)="auth.logout()">Logout</button>
+  <!-- <button *ngIf="auth.isuser || auth.isCA" mat-button routerLink="taxcalculator">Tax Calculator</button> -->
+  <button *ngIf="auth.isuser" mat-button routerLink="dashboard">Dashboard</button>
+  <button *ngIf="auth.isCA" mat-button routerLink="cadashboard">CA Dashboard</button>
+  <button mat-button routerLink="aboutUs">About Us</button>
+</mat-toolbar>
+<router-outlet></router-outlet>
