@@ -14,4 +14,8 @@ export class DashboardComponent {
     console.log('creating new component');
     this.route.navigate(['/taxcalculator']);
   }
+
+  openResources() {
+    window.open('https://www.incometax.gov.in/iec/foportal/', '_blank'); // Replace with your URL
+  }
 }

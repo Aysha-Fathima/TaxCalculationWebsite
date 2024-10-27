@@ -1,0 +1,123 @@
+<!-- <p>userprofile works!</p> -->
+
+
+
+<!-- <button (click)="restUserData.getDetails()">Get Tax History</button> -->
+
+
+
+<!-- <table border="1" *ngIf="restUserData.usersdata">
+    <tr>
+        <th>User id</th>
+        <th>User Name</th>
+        <th>email</th>
+        <th>userAddress</th>
+        <th>gender</th>
+    </tr>
+    
+    <tr>
+        <td> {{restUserData.usersdata.userId}} </td>
+        <td> {{restUserData.usersdata.userName}} </td>
+        <td> {{restUserData.usersdata.email}} </td>
+        <td> {{restUserData.usersdata.userAddress}} </td>
+        <td> {{restUserData.usersdata.gender}} </td> -->
+        <!-- <button  (click)="restUserData.viewDetails(p.userId)">View Details</button> -->
+    
+    <!-- </tr>
+    </table> -->
+
+    <h2>User Profile</h2>
+    <div *ngIf="restUserData.usersdata" class="user-info">
+        <div class="user-row">
+          <strong>User ID:</strong> {{restUserData.usersdata.userId}}
+        </div>
+        <div class="user-row">
+          <strong>User Name:</strong> {{restUserData.usersdata.userName}}
+        </div>
+        <div class="user-row">
+          <strong>Email:</strong> {{restUserData.usersdata.email}}
+        </div>
+        <div class="user-row">
+          <strong>Address:</strong> {{restUserData.usersdata.userAddress}}
+        </div>
+        <div class="user-row">
+          <strong>Gender:</strong> {{restUserData.usersdata.gender}}
+        </div>
+       
+    </div>
+
+    <h4>Details of CA Assigned</h4>
+    <div *ngIf="restUserData.usersdata" class="user-info">
+        <div class="user-row">
+          <strong>CA Name:</strong> {{restUserData.cadata.caName}}
+        </div>
+        <div class="user-row">
+          <strong>Email:</strong> {{restUserData.cadata.email}}
+        </div>   
+    </div>
+
+    <button (click)="restUserData.getTaxHistory()">Get Tax History</button>
+
+    <table border="1" *ngIf="restUserData.userDetails">
+        <tr>
+            <th>assessmentYear</th>
+            <th>age</th>
+            <th>totalAnnualIncome</th>
+            <th>totalDeductions</th>
+            <th>oldRegimeTax</th>
+            <th>newRegimeTax</th>
+        </tr>
+        
+        <tr *ngFor="let p of restUserData.userDetails ">
+            <td> {{p.assessmentYear}} </td>
+            <td> {{p.age}} </td>
+            <td> {{p.totalAnnualIncome}} </td>
+            <td> {{p.totalDeductions}} </td>
+            <td> {{p.oldRegimeTax}} </td>
+            <td> {{p.newRegimeTax}} </td>
+            <!-- <button  (click)="restUserData.viewDetails(p.userId)">View Details</button> -->
+        
+        </tr>
+        </table>
+      
+
+        <button (click)="restUserData.update=true">Update</button>
+        <form #updatecustomer="ngForm" (ngSubmit)="restUserData.updateUserDetails(updatecustomer)" *ngIf="restUserData.update">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput required name="UserName" ngModel>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput required email name="Email" ngModel>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" required name="Upassword" ngModel>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput type="text" required name="UserAddress" ngModel>
+              </mat-form-field>
+              
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Gender</mat-label>
+                <mat-select name="Gender" ngModel required>
+                  <mat-option value="Male">Male</mat-option>
+                  <mat-option value="Female">Female</mat-option>
+                  <mat-option value="Other">Other</mat-option>
+                </mat-select>
+              </mat-form-field>
+        
+            <button type="submit">UPDATE</button>
+        
+        </form>
+
+
+    <!-- this.router.navigateByUrl("displayuserdetails"); -->
+    <button routerLink="/dashboard">Back</button>

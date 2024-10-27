@@ -26,13 +26,13 @@
         <div class="card">
           <h3>Your Tax Profile</h3>
           <p>Manage your personal tax information and settings.</p>
-          <button mat-raised-button color="primary" routerLink="/profile">View Profile</button>
+          <button mat-raised-button color="primary" routerLink="/userprofile">View Profile</button>
         </div>
   
         <div class="card">
           <h3>Resources</h3>
           <p>Access helpful resources and guides to better understand your taxes.</p>
-          <button mat-raised-button color="primary" routerLink="/resources">View Resources</button>
+          <button mat-raised-button color="primary" (click)="openResources()">View Resources</button>
         </div>
       </div>
     </div>

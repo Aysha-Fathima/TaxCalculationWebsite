@@ -1,29 +1,41 @@
+
 .hero {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-  }
-  
-  .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 1.2em;
-  }
-  
-  .info-cards {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    flex-wrap: wrap; /* Makes it responsive */
-  }
-  
-  mat-card {
-    width: 300px; /* Fixed width for cards */
-    margin: 20px; /* Space between cards */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
+  background-color: #007bff; /* Primary color */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.info-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to new lines */
+  justify-content: space-around; /* Distributes space evenly */
+  padding: 20px;
+}
+
+mat-card {
+  width: 30%; /* Adjust width to fit six cards in a row */
+  margin: 10px; /* Space between cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-header {
+  font-family: 'Roboto', sans-serif; /* Change font */
+}
+
+mat-card-title {
+  font-weight: bold; /* Bold title */
+}
+
+mat-card-subtitle {
+  font-style: italic; /* Italic subtitle for distinction */
+}

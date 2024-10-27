@@ -11,6 +11,7 @@ import { CAauthGuard } from '../guards/CAauth.guard';
 import { CombinedAuthGuard } from '../guards/combined.guards';
 import { ClientmanagementComponent } from '../components/clientmanagement/clientmanagement.component';
 import { DisplayuserdetailsComponent } from '../components/displayuserdetails/displayuserdetails.component';
+import { UserprofileComponent } from '../components/userprofile/userprofile.component';
 
 export const routes: Routes = [
     {path:"home", component:HomeComponent},
@@ -25,5 +26,6 @@ export const routes: Routes = [
     { path: 'cadashboard', component: CAdashboardComponent},
     { path: 'clientmanagement',component:ClientmanagementComponent },
     { path: 'displayuserdetails',component:DisplayuserdetailsComponent},
+    { path: 'userprofile',component:UserprofileComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
