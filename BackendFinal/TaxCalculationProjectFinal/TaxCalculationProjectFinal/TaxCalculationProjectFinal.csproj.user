@@ -11,5 +11,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>TaxCalculationProjectFinal.Models.TaxCalculationProjectDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <NameOfLastUsedPublishProfile>C:\Users\Administrator\Desktop\upendra\BackendFinal\TaxCalculationProjectFinal\TaxCalculationProjectFinal\Properties\PublishProfiles\TaxCalculationProjectFinal20241028122026 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

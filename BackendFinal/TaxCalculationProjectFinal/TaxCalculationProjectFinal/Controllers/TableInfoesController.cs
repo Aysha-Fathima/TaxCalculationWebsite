@@ -135,6 +135,26 @@ namespace TaxCalculationProjectFinal.Controllers
             return taxInfo;
         }
 
+        [HttpGet("AllUsersForCA/{id}")]
+        public async Task<ActionResult<IEnumerable<TableInfo>>> GetUsersForCA(int id)
+        {
+            if (_context.TableInfos == null)
+            {
+                return NotFound();
+            }
+            //var taxInfo = await _context.TaxInfos.FindAsync(id);
+            var taxInfo = await _context.TableInfos
+            .Where(t => t.CaId == id)
+            .ToListAsync();
+
+            if (taxInfo == null)
+            {
+                return NotFound();
+            }
+
+            return taxInfo;
+        }
+
         private bool TableInfoExists(int id)
         {
             return (_context.TableInfos?.Any(e => e.TaxId == id)).GetValueOrDefault();
