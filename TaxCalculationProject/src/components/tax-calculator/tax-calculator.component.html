@@ -84,6 +84,17 @@
     <p>You save ₹{{ oldRegimeTax - newRegimeTax }} if you opt for the New Tax Regime.</p>
   </div>
 <br>
+<button mat-raised-button color="primary" type="button" (click)="chartVisualise()" *ngIf="restUserData.showGrossTotalIncome">Compare</button>
+<br>
+<!-- <ng-container *ngIf="visualise"> -->
+  <canvas id="myChart" width="400" height="200"></canvas>
+<!-- </ng-container> -->
+<!-- <div> -->
+  <!-- <h2>My Tax Comparison</h2> -->
+  <!-- <canvas id="myChart" width="400" height="200"></canvas> -->
+<!-- </div> -->
+  <!-- <button mat-raised-button color="primary" type="button" *ngIf="restUserData.showGrossTotalIncome">Compare</button> -->
+  <br>
   <button mat-raised-button color="primary" type="button" (click)="restUserData.generatePDF()" *ngIf="restUserData.showGrossTotalIncome">Generate PDF</button>
 
 </div>

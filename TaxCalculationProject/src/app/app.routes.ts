@@ -12,6 +12,8 @@ import { CombinedAuthGuard } from '../guards/combined.guards';
 import { ClientmanagementComponent } from '../components/clientmanagement/clientmanagement.component';
 import { DisplayuserdetailsComponent } from '../components/displayuserdetails/displayuserdetails.component';
 import { UserprofileComponent } from '../components/userprofile/userprofile.component';
+import { ReportsGenerationComponent } from '../components/reports-generation/reports-generation.component';
+import { AuthService } from '../service/auth.service';
 
 export const routes: Routes = [
     {path:"home", component:HomeComponent},
@@ -19,13 +21,14 @@ export const routes: Routes = [
     {path:"login", component:LoginComponent},
     {path:"aboutUs", component:AboutUsComponent},
     // { path: 'dashboard', component: DashboardComponent, canActivate:[CombinedAuthGuard]},
-    {path:"dashboard", component:DashboardComponent},
+    {path:"dashboard", component:DashboardComponent,canActivate:[AuthService]},
     // { path: 'taxcalculator', component: TaxCalculatorComponent, canActivate:[CombinedAuthGuard]},
-    { path: 'taxcalculator', component: TaxCalculatorComponent},
+    { path: 'taxcalculator', component: TaxCalculatorComponent,canActivate:[AuthService]},
     // { path: 'cadashboard', component: CAdashboardComponent, canActivate:[CAauthGuard]},
-    { path: 'cadashboard', component: CAdashboardComponent},
-    { path: 'clientmanagement',component:ClientmanagementComponent },
-    { path: 'displayuserdetails',component:DisplayuserdetailsComponent},
-    { path: 'userprofile',component:UserprofileComponent},
+    { path: 'cadashboard', component: CAdashboardComponent,canActivate:[AuthService]},
+    { path: 'clientmanagement',component:ClientmanagementComponent,canActivate:[AuthService]},
+    { path: 'displayuserdetails',component:DisplayuserdetailsComponent,canActivate:[AuthService]},
+    { path: 'userprofile',component:UserprofileComponent,canActivate:[AuthService]},
+    { path: 'reports', component:ReportsGenerationComponent,canActivate:[AuthService]},
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

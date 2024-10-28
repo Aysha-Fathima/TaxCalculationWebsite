@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, SimpleChanges, ViewChild } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { ConnectService } from '../../service/connect.service';
@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { Chart, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-income-tax-calculator',
@@ -23,13 +24,16 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule] // Import NgIf and FormsModule
 })
 
-export class TaxCalculatorComponent {
+export class TaxCalculatorComponent{
   restUserData: ConnectService;
   constructor( restUserDataRef:ConnectService,private router:Router)
   {
     this.restUserData=restUserDataRef;
 
   }
+  // ngAfterViewInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
 
   // constructor(private conn:ConnectService){};
   taxDetails = {
@@ -100,4 +104,61 @@ export class TaxCalculatorComponent {
     
     return tax;
   }
+
+
+  // ngOnChanges(changes: SimpleChanges) {
+  //   // Check if showGrossTotalIncome has changed
+  //   if (changes.restUserData?.showGrossTotalIncome?.currentValue) {
+  //     this.chartVisualise();
+  //   }
+  // }
+
+  chart: any;
+  chartLabel:string[] = [];
+  chartData:number[] = [];
+  visualise:boolean = false;
+
+  // @ViewChild('myChart', { static: false }) myChart!: ElementRef<HTMLCanvasElement>;
+
+  // ngAfterViewInit() {
+  //   // This will be called after the view has been initialized
+  // }
+  chartVisualise(){
+    this.visualise = true;
+    // let {detail1,detail2} = this.restUserData.getChartDetails();
+      // console.log(detail1,detail2);
+      // this.chartLabel = [detail1.assessmentYear,detail2.assessmentYear];
+      // this.chartData = [detail1.grossTotalIncome,detail2.grossTotalIncome];
+      this.chartLabel = ['NewRegime', 'OldRegime'];
+      this.chartData = [this.newRegimeTax,this.oldRegimeTax];
+      console.log(this.chartLabel);
+      console.log(this.chartData);
+      // Register the Chart.js components
+      Chart.register(...registerables);
+    this.chart = new Chart('myChart', {
+      type: 'bar', // Change this to 'line', 'pie', etc. for different chart types
+      data: {
+        labels: this.chartLabel,
+        datasets: [{
+          label: 'Income Tax ',
+          data: this.chartData,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
+
+  // onCompareClick() {
+  //   this.visualise = true;
+  //   this.chartVisualise();
+  // }
 }

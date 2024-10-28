@@ -19,8 +19,8 @@ export class ClientmanagementComponent {
 
   }
 
-  ngOnInit(){
-    this.restUserData.getAllUsers();
-  }
+  // ngOnInit(){
+  //   this.restUserData.getAllUsers();
+  // }
 
 }

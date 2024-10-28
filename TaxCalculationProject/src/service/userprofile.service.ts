@@ -18,23 +18,24 @@ export class UserprofileService {
     this._http=_httpRef;
    }
 
-   usersdata:any;
+  public usersdata:any;
    getDetails()
   {
-  this._http.get("https://localhost:7283/api/UserDatums/"+this.authService.userid)
+  this._http.get("https://taxcalculationprojectfinal20241028122026.azurewebsites.net/api/UserDatums/"+this.authService.userid)
   .subscribe((data=>{
     this.usersdata=data;
-    console.log(this.usersdata.userName);
+    console.log("hii",this.usersdata.userName);
   }));
   }
 
   cadata:any;
   getcaDetails()
   {
-  this._http.get("https://localhost:7283/api/CharteredAccountants/"+this.authService.caid)
+  this._http.get("https://taxcalculationprojectfinal20241028122026.azurewebsites.net/api/CharteredAccountants/"+this.authService.caid)
   .subscribe((data=>{
     this.cadata=data;
-    console.log(this.cadata.userName);
+    console.log("cadata",this.cadata);
+    // console.log(this.cadata.userName);
   }));
   }
 
@@ -42,7 +43,7 @@ export class UserprofileService {
   userDetails:any;
 
   getTaxHistory(){
-    this._http.get("https://localhost:7283/api/TableInfoes/userdetails/"+this.authService.userid)
+    this._http.get("https://taxcalculationprojectfinal20241028122026.azurewebsites.net/api/TableInfoes/userdetails/"+this.authService.userid)
    .subscribe((data=>{
      this.userDetails=data;
     //  this.DetailsUserName = details.userName;
@@ -63,7 +64,7 @@ updateUserDetails(data:any)
   data.value.caId = this.authService.caid;
   data.value.userId = this.authService.userid;
 console.log(data.value);
-this._http.put('https://localhost:7283/api/UserDatums/' + this.authService.userid,JSON.stringify(data.value),this.httpOptions)
+this._http.put('https://taxcalculationprojectfinal20241028122026.azurewebsites.net/api/UserDatums/' + this.authService.userid,JSON.stringify(data.value),this.httpOptions)
 .subscribe(result =>{
   alert("Updated Successfully!");
   this.update = false;

@@ -32,8 +32,8 @@ export class UserprofileComponent {
     this.restUserData=restUserDataRef;
 
   }
-  ngOnInit(){
-    this.restUserData.getDetails();
-    this.restUserData.getcaDetails();
-  }
+  // ngOnInit(){
+  //   this.restUserData.getDetails();
+  //   this.restUserData.getcaDetails();
+  // }
 }
